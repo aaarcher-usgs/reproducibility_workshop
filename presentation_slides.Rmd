@@ -36,3 +36,35 @@ knitr::opts_chunk$set(echo = FALSE)
 \item grant and journal requirements
 \end{itemize}
 
+## Is my research reproducible?
+
+- Are your research documents stored in these formats?
+    - .csv
+    - .txt
+    - .pdf
+    - .html
+    - .R
+        - \textcolor{blue}{YES!}
+        
+    - .doc/.docx
+    - .sas
+    - .xls/.xlsx
+    - any other proprietary file format
+        - \textcolor{red}{NO!}
+        
+## Is my research reproducible?
+
+- Are your files easily shared with others?
+    - Solution: GitHub
+    - Solution: Organized directory structure
+
+- Are your files relatively linked?
+    - Solution: RStudio projects
+
+- Is your code well-documented/commented?
+    - Solution: R-Markdown or R-Oxygen
+
+- Is your code linear? 
+    - Solution: Clearing environment often & not saving .Rdata
+    - Solution: Each program completes one task or analysis
+    - Solution: Don't rely on manual commenting/uncommenting
