@@ -1,6 +1,6 @@
 ---
-title: "workshop_presentation"
-author: "Althea A. ArchMiller"
+title: "Developing a Workflow to Maximize Reproducibility and Research Impact: Managing Data, Computer Code, and Projects for Success"
+author: "John R. Fieberg & Althea A. ArchMiller"
 date: "4/11/2017"
 output: beamer_presentation
 ---
@@ -9,27 +9,30 @@ output: beamer_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## R Markdown
+## Why worry about reproducibility?
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+\begin{columns}
+\begin{column}{0.48\textwidth}
+\textbf{Working towards future reproducibility makes my code easier}\\ for my collaborators (and me) to read, run, and debug\\ \textbf{today},\\ and that’s why I think reproducibility is a \\ \textbf{win-win for all researchers}.”
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+-Althea
+\end{column}
+\begin{column}{0.48\textwidth}
+\includegraphics[width=2in]{images/phd101212s.png}
+\end{column}
+\end{columns}
 
-## Slide with Bullets
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+## Why worry about reproducibility?
 
-## Slide with R Output
+“[Reproducibility] provides security, saves time, and forces me to be more thoughtful about my workflow.” - Ethan Young
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
-
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
+\begin{itemize}
+\item make your life easier!
+\item collaborations
+\item broader research impact
+\item increased citations
+\item transparency
+\item grant and journal requirements
+\end{itemize}
 
