@@ -51,20 +51,42 @@ knitr::opts_chunk$set(echo = FALSE)
     - .xls/.xlsx
     - any other proprietary file format
         - \textcolor{red}{NO!}
+
+## Is my research reproducible?
+
+- Is your code linear? 
+    - Clear environment often and at beginning of script
+    - Don't save .Rdata or history
+    - Each program should focus on one main task or analysis
+    - Don't rely on manual commenting/uncommenting
+
+```{r, eval=F, echo=T}
+# What variables are significant?
+lm.out <- lm(weight ~ height, data = trial.data)
+remove(lm.out) # clear previous lm.out for each 
+               #   new lm() definition above
+
+# Is the relationship significant? 
+#     (If not, clear and try a new regressor)
+summary(lm.out)
+```
+
         
 ## Is my research reproducible?
 
 - Are your files easily shared with others?
-    - Solution: GitHub
-    - Solution: Organized directory structure
+    - Organized directory structure
+    - Files relatively linked
+    - Well-documented & commented
+    - Consistency in coding practices
 
-- Are your files relatively linked?
-    - Solution: RStudio projects
+"The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on *what* you are saying, rather than on *how* you are saying it." - Google's R Style Guide
 
-- Is your code well-documented/commented?
-    - Solution: R-Markdown or R-Oxygen
+## Workshop Outline
 
-- Is your code linear? 
-    - Solution: Clearing environment often & not saving .Rdata
-    - Solution: Each program completes one task or analysis
-    - Solution: Don't rely on manual commenting/uncommenting
+The goal for this workshop is to help you develop the tools to develop a workflow to maximize reproducibility, collaborations, and research impact.
+
+- Rstudio Projects for organizing data, code, and output
+- R-Markdown and R-Oxygen for documenting your code
+- GitHub for version-control, collaborating and archiving
+
