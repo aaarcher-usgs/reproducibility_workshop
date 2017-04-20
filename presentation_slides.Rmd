@@ -93,3 +93,8 @@ The goal for this workshop is to help you develop the tools to develop a workflo
 ## Tips
 
 Don't use github with large files :-(
+
+## Why R-Markdown for manuscripts?
+
+"I can do reproducible work in R (making me happy) and format the output report in Word (making my collaborators happy)" - Richard Layton http://rmarkdown.rstudio.com/articles_docx.html
+
