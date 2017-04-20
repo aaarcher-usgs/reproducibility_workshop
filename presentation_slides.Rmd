@@ -90,3 +90,6 @@ The goal for this workshop is to help you develop the tools to develop a workflo
 - R-Markdown and R-Oxygen for documenting your code
 - GitHub for version-control, collaborating and archiving
 
+## Tips
+
+Don't use github with large files :-(
