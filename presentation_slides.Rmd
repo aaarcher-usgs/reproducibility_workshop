@@ -93,6 +93,7 @@ The goal for this workshop is to help you develop the tools to develop a workflo
 ## Tips
 
 Don't use github with large files :-(
+Create new projects in GitHub first, then sync them with RStudio
 
 ## Why R-Markdown for manuscripts?
 
