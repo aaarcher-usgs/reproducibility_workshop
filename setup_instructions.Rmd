@@ -1,0 +1,112 @@
+---
+title: "Setting Up GitHub and RStudio"
+author: "Althea"
+date: "April 21, 2017"
+output:
+  html_document: 
+    toc: yes
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
+options(width=300)
+```
+
+## Overview and Introduction
+
+### Requirements
+
+Program R <https://www.r-project.org/>
+
+RStudio <https://www.rstudio.com/products/RStudio/>
+
+GitHub account <https://github.com/>
+
+- You can use an educational email address to get free private repositories through GitHub Educational <https://education.github.com/> 
+- Or use any email to get unlimited public repositories
+- You can also upgrade for fairly cheap to buy unlimited private repositories.
+
+*Private repositories are helpful for research projects in progress, protecting your work until you are ready to publish*
+
+### Terminology
+
+- **repository**
+    + A project (here, an RStudio Project) that contains code, analysis, output, etc that is held by GitHub
+    + Repositories may be public or private
+    + Mose repository will have one "owner" with direct writing privileges; however,
+    + All repositories can be made to include more than one "owner" or "collaborator" that has direct write privileges
+- **branch**
+    + A particular version of a repository. 
+    + The "master" branch is the original version of the repository
+    + "Forked" branches are any "clones" that are made by anyone other than the repository owner
+- **commit**
+    + verb: to save a change or series of changes to the repository, with an associated "commit message"
+    + noun: the saved changes as an entity, which can be "pushed" back to the associated branch
+- **push**
+    + to merge 1 or more commits back to the associated branch
+    + you can only push directly to repositories that you have ownership or collaborator privileges for
+    + if you don't have direct writing privileges, you have to create a "pull request"
+    + the direction of a push is from your local version (RStudio) to GitHub server
+- **pull**
+    + to take any changes that have been made to the associated branch and sync them with your local version
+    + the direction of a pull is from the GitHub server to your local version (RStudio)
+- **pull request**
+    + A series of commits that have been made on a forked branch that are being asked to merge with the next upstream branch (i.e., usually the master branch)
+    + View and accept pull requests through GitHub directly
+
+
+### Overview
+
+Althea created the repository for the reproducibility workshop on her GitHub account (<https://github.com/aaarchmiller/reproducibility_workshop>). John Fieberg and her are the only ones that have direct editing privileges; however, anyone can create a "clone" of the repository (aka a "forked branch") and edit it on their own computer. Changes can then be sent back to Althea as a "pull request," which she can either ignore or merge with the main "branch."
+
+Once you have a repository set up on GitHub and synced with RStudio, you can make changes, "commit" them with an associated "commit message," and then "push" them back to *your* branch (which will likely be the "master branch" if it is your respository or a "forked branch" if it is a clone of another repository). You will also need to "pull" the most up-to-date files from GitHub to your local cloned version of the repository *if* you have made changes on another computer, on GitHub directly, or if someone else is making changes directly to the main branch.
+
+## Instructions for setting up Git using GitHub and RStudio
+
+At the end of this introduction, you will add your name to the workshop roll call, signalling to the instructors that you have successfully set up GitHub. If at any point you run across errors or concerns, please email Althea at althea.archmiller [at] gmail [dot] com. 
+
+### Step 1. Sync your GitHub Account and RStudio
+
+#### Set up SSH key
+
+An SSH key allows your computer to talk directly with your GitHub account. Only do this step on a computer that you will frequently be using with RStudio and GitHub. If you are on a public computer or a borrowed laptop for the workshop, we recommend skipping this step.
+
+1. Open RStudio and Tools > Global Options
+2. Click on Git/SVN tab on left column
+
+![](images/ssh_setup1.png)
+
+3. Click on "Create RSA Key..."
+4. Do **not** enter anything in the passphrase
+5. The default path should be fine, so I recommend leaving at default.
+
+![](images/ssh_setup2.png)
+
+6. Click "Create" and you will see something like this: 
+
+![](images/ssh_setup3.png)
+
+7. Click "Close" and then "View Public Key" and you should see something like this: 
+
+![](images/ssh_setup4.png)
+
+8. Copy the entire text box, starting with "ssh-rsa..."
+9. Log into your GitHub account.
+10. Navigate to your settings. (Click on your profile picture on the top right of the screen, then Settings)
+11. Click on the SSH and GPG keys tab on the left column, and you should see something like this (although empty because you have yet to add a key):
+
+![](images/ssh_setup5.png)
+
+12. Click on green "New SSH key"
+13. Name it something like "My work laptop"
+14. Paste in the text, which should start with "ssh-rsa ..."
+15. Click green "Add SSH key" button.
+
+Now you're all set! 
+
+### Step 2: Clone a version of the workshop repository to your computer
+
+
+
+
