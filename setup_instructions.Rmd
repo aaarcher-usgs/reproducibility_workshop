@@ -27,33 +27,33 @@ GitHub account <https://github.com/>
 - Or use any email to get unlimited public repositories
 - You can also upgrade for fairly cheap to buy unlimited private repositories.
 
-*Private repositories are helpful for research projects in progress, protecting your work until you are ready to publish*
+*Private repositories are helpful for research projects in progress, protecting your work until you are ready to publish.*
 
 ### Terminology
 
 - **repository**
     + A project (here, an RStudio Project) that contains code, analysis, output, etc that is held by GitHub
     + Repositories may be public or private
-    + Mose repository will have one "owner" with direct writing privileges; however,
-    + All repositories can be made to include more than one "owner" or "collaborator" that has direct write privileges
+    + Most repositories will have one "owner" with direct writing privileges; however,
+    + All repositories can be made to include more than one "owner" or "collaborator" with direct write privileges
 - **branch**
-    + A particular version of a repository. 
+    + A particular version of a repository
     + The "master" branch is the original version of the repository
     + "Forked" branches are any "clones" that are made by anyone other than the repository owner
 - **commit**
-    + verb: to save a change or series of changes to the repository, with an associated "commit message"
-    + noun: the saved changes as an entity, which can be "pushed" back to the associated branch
+    + Verb: to save a change or series of changes to the repository, with an associated "commit message"
+    + Noun: the saved changes as an entity, which can be "pushed" back to the associated branch
 - **push**
-    + to merge 1 or more commits back to the associated branch
-    + you can only push directly to repositories that you have ownership or collaborator privileges for
-    + if you don't have direct writing privileges, you have to create a "pull request"
-    + the direction of a push is from your local version (RStudio) to GitHub server
+    + To merge 1 or more commits back to the associated branch
+    + You can only push directly to repositories that you have ownership or collaborator privileges for
+    + If you don't have direct writing privileges, you have to create a "pull request"
+    + The direction of a push is from your local version (RStudio) to GitHub server
 - **pull**
-    + to take any changes that have been made to the associated branch and sync them with your local version
-    + the direction of a pull is from the GitHub server to your local version (RStudio)
+    + To take any changes that have been made to the associated branch and sync them with your local version
+    + The direction of a pull is from the GitHub server to your local version (RStudio)
 - **pull request**
     + A series of commits that have been made on a forked branch that are being asked to merge with the next upstream branch (i.e., usually the master branch)
-    + View and accept pull requests through GitHub directly
+    + You will view and accept pull requests through GitHub directly
 
 
 ### Overview
@@ -73,29 +73,24 @@ At the end of this introduction, you will add your name to the workshop roll cal
 An SSH key allows your computer to talk directly with your GitHub account. Only do this step on a computer that you will frequently be using with RStudio and GitHub. If you are on a public computer or a borrowed laptop for the workshop, we recommend skipping this step.
 
 1. Open RStudio and Tools > Global Options
-2. Click on Git/SVN tab on left column
-
+2. Click on Git/SVN tab on left column of Global Options
 ![](images/ssh_setup1.png)
 
 3. Click on "Create RSA Key..."
 4. Do **not** enter anything in the passphrase
 5. The default path should be fine, so I recommend leaving at default.
-
 ![](images/ssh_setup2.png)
 
 6. Click "Create" and you will see something like this: 
-
 ![](images/ssh_setup3.png)
 
 7. Click "Close" and then "View Public Key" and you should see something like this: 
-
 ![](images/ssh_setup4.png)
 
 8. Copy the entire text box, starting with "ssh-rsa..."
 9. Log into your GitHub account.
 10. Navigate to your settings. (Click on your profile picture on the top right of the screen, then Settings)
 11. Click on the SSH and GPG keys tab on the left column, and you should see something like this (although empty because you have yet to add a key):
-
 ![](images/ssh_setup5.png)
 
 12. Click on green "New SSH key"
@@ -107,6 +102,76 @@ Now you're all set!
 
 ### Step 2: Clone a version of the workshop repository to your computer
 
+In this section, you will clone a verison of the workshop repository to your 
+computer and eventually modify the text file "roll_call" so that the instructors
+can verify that you have successfully prepared for the workshop activities. (These steps follow http://r-bio.github.io/intro-git-rstudio/.)
+
+![](images/GitHub_overview_branches.png)
 
 
 
+1. Navigate to the workshop repository (https://github.com/aaarchmiller/reproducibility_workshop) on GitHub
+2. Click "Fork" in the upper right hand corner. This will create a cloned branch in your own GitHub account (Forked Branch in the image above). Copy the URL for *your* branch (something like: https://github.com/yourusername/reproducibility_workshop).
+![](images/fork_repo.tiff)
+
+3. Open RStudio, go to File > New Project
+![](images/new_project1.tiff)
+
+4. Select "Version Control" and Git
+
+![](images/new_project2.tiff)
+![](images/new_project3.tiff)
+
+5. Paste in the URL for *your* branch (something like: https://github.com/yourusername/reproducibility_workshop). Make sure you're happy with the location on the harddrive that it will be saved to and select "Create Project"
+![](images/new_project4.tiff)
+
+6. Now, in order to link this project with Althea's "upstream" version, we will use the shell and the **git** language directly. Open the shell by selecting Tools > Shell...
+![](images/shell1.tiff)
+
+7. Type in (exactly) and hit Enter:
+
+```{r shell1, eval=F, echo=T}
+git remote add upstream https://github.com/aaarchmiller/reproducibility_workshop
+```
+
+### Step 3: Add your name to roll_call.txt
+
+1. First we are going to create a new branch of your version of the workshop repository so that all the changes are self-contained. 
+2. In shell, type in (exactly) and press enter:
+```{r shell2, eval=F, echo=T}
+git checkout -b conduct-rollcall master
+```
+
+This creates a new branch called "conduct-rollcall" on your repository.
+![](images/shell2.tiff)
+
+3. Open up roll_call.txt, add your name, and save.
+4. In the Git tab of RStudio, you should now see roll_call show up.
+5. Select roll_call by clicking in the box to the left of it (a check mark should appear).
+6. Click "Commit" button and a new window should appear:
+![](images/commit1.tiff)
+
+7. Type in an informative "commit message" like above
+8. Select the "Commit" button.
+9. Enter shell again and type in this (exactly) and hit Enter:
+```{r shell3, eval=F, echo=T}
+git push origin conduct-rollcall
+```
+
+Now, you have changed roll_call in your "conduct-rollcall" branch, but now you need to merge it back with your main repository.
+
+1. Go to GitHub and view your fork. In this example, it is "https://github.com/yourusername/reproducibility_workshop"
+2. You should see something like this:
+![](images/merge_branch1.tiff)
+3. Click the green "Compare & pull request" button
+4. Add in another message in the Write window and click the "Create pull request" button:
+![](images/merge_branch2.tiff)
+5. Now, you should get a message about how this branch has no conflicts and can be merged automatically. 
+![](images/merge_branch3.tiff)
+6. Select the green "Merge pull request" button and then "Confirm merge".
+7. Now, delete the branch by pressing the "Delete branch" button.
+8. In RStudio, make sure you select "master" from the dropdown menu that currently says "conduct-rollcall" and you should get a popup message about switching back to the master branch.
+
+You have successfully changed "roll_call" document on your forked branch, but now you need to send it to the instructors to merge with the original branch. You have to just follow the same instructions above, but this time, starting at "https://github.com/aaarchmiller/reproducibility_workshop" in step [1]. (Step [8] will not apply.)
+
+If you have completed all of these steps, you are now ready to participate in the workshop. Again, contact Althea (althea.archmiller [at] gmail [dot] com) if you have any problems!
