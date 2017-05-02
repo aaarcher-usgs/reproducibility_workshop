@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 \begin{columns}
 \begin{column}{0.48\textwidth}
-\textbf{Working towards future reproducibility makes my code easier}\\ for my collaborators (and me) to read, run, and debug\\ \textbf{today},\\ and that’s why I think reproducibility is a \\ \textbf{win-win for all researchers}.”
+Working towards future reproducibility makes my code easier for my collaborators \\ (and me) to read, run, and debug today,\\ and that’s why I think reproducibility is a \\ \textbf{win-win for all researchers}.”
 
 -Althea
 \end{column}
@@ -86,14 +86,14 @@ summary(lm.out)
 
 The goal for this workshop is to help you develop the tools to develop a workflow to maximize reproducibility, collaborations, and research impact.
 
-- Rstudio Projects for organizing data, code, and output
+- RStudio Projects for organizing data, code, and output
 - R-Markdown and R-Oxygen for documenting your code
 - GitHub for version-control, collaborating and archiving
 
 ## Tips
 
-Don't use github with large files :-(
-Create new projects in GitHub first, then sync them with RStudio
+- Don't use github with large files :-(
+- Create new projects in GitHub first, then sync them with RStudio
 
 ## Why R-Markdown for manuscripts?
 
