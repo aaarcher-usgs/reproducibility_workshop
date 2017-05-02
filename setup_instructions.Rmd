@@ -171,6 +171,7 @@ Now, you have changed roll_call in your "conduct-rollcall" branch, but now you n
 6. Select the green "Merge pull request" button and then "Confirm merge".
 7. Now, delete the branch by pressing the "Delete branch" button.
 8. In RStudio, make sure you select "master" from the dropdown menu that currently says "conduct-rollcall" and you should get a popup message about switching back to the master branch.
+9. Pull changes (will pull the merged roll_call document from GitHub)
 
 You have successfully changed "roll_call" document on your forked branch, but now you need to send it to the instructors to merge with the original branch. You have to just follow the same instructions above, but this time, starting at "https://github.com/aaarchmiller/reproducibility_workshop" in step [1]. (Step [8] will not apply.)
 
