@@ -86,14 +86,46 @@ summary(lm.out)
 
 The goal for this workshop is to help you develop the tools to develop a workflow to maximize reproducibility, collaborations, and research impact.
 
-- RStudio Projects for organizing data, code, and output
-- R-Markdown and R-Oxygen for documenting your code
-- GitHub for version-control, collaborating and archiving
+1. RStudio Projects for organizing data, code, and output
+2. R-Markdown and R-Oxygen for documenting your code
+3. GitHub for version-control, collaborating and archiving
+
+## 1. RStudio Projects
+
+Think about a typical data analysis project, maybe a dissertation chapter or an experiment that you've managed from data collection through publication. What are typical **folders** that you've used?
+
+- Raw data
+- Processed data
+- Analysis scripts
+- Paper/Manuscript-related documents
+- Sharing documents ("transmittals")
+- Metadata
+- Maps or other deliverables
+
+RStudio Projects provide an opportunity for you to organize and manage all of these types of folders in **one place** in a way that **relatively links** everything together and **eases sharing**.
+
+## 1. RStudio Projects
+
+**Tips**
+
+- Treat data as read-only
+    - Don't use Excel, etc, to manipulate raw data
+    - Use a single R program for all manipulation
+    - Save "cleaned" or "procesed" data in easily loadable format
+    
+## 1. RStudio Projects
+
+**Other links**
+
+https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/
+
+
 
 ## Tips
 
 - Don't use github with large files :-(
 - Create new projects in GitHub first, then sync them with RStudio
+
 
 ## Why R-Markdown for manuscripts?
 
