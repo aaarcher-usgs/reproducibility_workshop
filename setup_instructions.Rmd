@@ -115,21 +115,21 @@ can verify that you have successfully prepared for the workshop activities. (The
 
 1. Navigate to the workshop repository (https://github.com/aaarchmiller/reproducibility_workshop) on GitHub
 2. Click "Fork" in the upper right hand corner. This will create a cloned branch in your own GitHub account (Forked Branch in the image above). Copy the URL for *your* branch (something like: https://github.com/yourusername/reproducibility_workshop).
-![](images/fork_repo.tiff)
+![](images/fork_repo.png)
 
 3. Open RStudio, go to File > New Project
-![](images/new_project1.tiff)
+![](images/new_project1.png)
 
 4. Select "Version Control" and then "Git"
 
-![](images/new_project2.tiff)
-![](images/new_project3.tiff)
+![](images/new_project2.png)
+![](images/new_project3.png)
 
 5. Paste in the URL for *your* branch (something like: https://github.com/yourusername/reproducibility_workshop). Make sure you're happy with the location on the harddrive that it will be saved to and select "Create Project"
-![](images/new_project4.tiff)
+![](images/new_project4.png)
 
 6. Now, in order to link this project with Althea's "upstream" version, we will use the shell and the **git** language directly. Open the shell by selecting Tools > Shell...
-![](images/shell1.tiff)
+![](images/shell1.png)
 
 7. Type in (exactly; cannot copy/paste) and hit Enter:
 
@@ -143,7 +143,7 @@ git remote add upstream https://github.com/aaarchmiller/reproducibility_workshop
 2. In the Git tab of RStudio (top right), you should now see roll_call show up.
 3. Select roll_call by clicking in the box to the left of it (a check mark should appear).
 4. Click "Commit" button and a new window should appear:
-![](images/commit1.tiff)
+![](images/commit1.png)
 
 5. Type in an informative "commit message" like above
 6. Select the "Commit" button. You may get a message like this, which you can disregard.
