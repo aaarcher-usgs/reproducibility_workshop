@@ -28,7 +28,7 @@ Working towards future reproducibility makes my code easier for my collaborators
 “[Reproducibility] provides security, saves time, and forces me to be more thoughtful about my workflow.” - Ethan Young
 
 \begin{itemize}
-\item make your life easier!
+\item make your life easier! Now, and in the future
 \item collaborations
 \item broader research impact
 \item increased citations
@@ -43,7 +43,7 @@ Working towards future reproducibility makes my code easier for my collaborators
     - .txt
     - .pdf
     - .html
-    - .R
+    - .R/.Rdata
         - \textcolor{blue}{YES!}
         
     - .doc/.docx
@@ -58,7 +58,9 @@ Working towards future reproducibility makes my code easier for my collaborators
     - Clear environment often and at beginning of script
     - Don't save .Rdata or history
     - Each program should focus on one main task or analysis
-    - Don't rely on manual commenting/uncommenting
+    - Don't rely on manual commenting/uncommenting \pause
+
+So, what's wrong here?
 
 ```{r, eval=F, echo=T}
 # What variables are significant?
@@ -86,13 +88,13 @@ summary(lm.out)
 
 The goal for this workshop is to help you develop the tools to develop a workflow to maximize reproducibility, collaborations, and research impact.
 
-1. RStudio Projects for organizing data, code, and output
-2. R-Markdown and R-Oxygen for documenting your code and creating reproducible reports
+1. RStudio Projects for organizing data, code, and output \pause
+2. R-Markdown and R-Oxygen for documenting your code and creating reproducible reports \pause
 3. GitHub for version-control, collaborating and archiving
 
 ## 1. RStudio Projects
 
-Think about a typical data analysis project, maybe a dissertation chapter or an experiment that you've managed from data collection through publication. What are typical **folders** that you've used?
+Think about a typical research project, maybe a dissertation chapter or an experiment that you've managed from data collection through publication. What are typical **folders** that you've used? \pause
 
 - Raw data
 - Processed data
@@ -102,16 +104,54 @@ Think about a typical data analysis project, maybe a dissertation chapter or an 
 - Metadata
 - Maps or other deliverables
 
-RStudio Projects provide an opportunity for you to organize and manage all of these types of folders in **one place** in a way that **relatively links** everything together and **eases sharing**.
+RStudio Projects provide an opportunity for you to organize and manage all of these types of folders in **one place** in a way that **relatively links** everything together and **eases sharing**.\pause
 
-## 1. RStudio Projects
+Up next, Activity 1!    
 
-**Tips**
+## Activity 1: Data management and updating
 
-- Treat data as read-only
-    - Don't use Excel, etc, to manipulate raw data
-    - Use a single R program for all manipulation
-    - Save "cleaned" or "procesed" data in easily loadable format
+Here, we will read in and process three weeks of experimental data and do some preliminary analysis. Then, we will get a final (4th) week of data, which we will merge with the original data. 
+
+The goals are to:
+
+1. Be introduced to RStudio
+2. Create a framework for keeping data organized and up-to-date
+3. Automatically update our analyses based on the master dataset
+
+Context: Abundance data from ~75 invertebrate species sampled on various beaches along the Dutch coast. 
+
+*Zuur, A.F., E.N. Ieno, and G.M. Smith (2007) Analysing Ecological Data. Springer, New York.*
+
+## Activity 1: Data management and updating
+
+Before we begin today, we need sync your individual versions of the workshop documents with Althea's master branch:\pause
+
+1. Open RStudio and your reproducibility_workshop.rproj. (File > Open Project...)
+2. Open shell (Tools > Shell...)
+3. Type in exactly, then press enter:
+```{r shell1, eval=F, echo=T}
+$ git fetch upstream
+```
+4. Type in exactly, then press enter:
+```{r shell2, eval=F, echo=T}
+$ git checkout master
+``` 
+5.  Type in exactly, then press enter:
+```{r shell3, eval=F, echo=T}
+$ git merge upstream/master
+```
+
+## Activity 1: Data management and updating
+
+Now create a new folder in student_folders/ for all of today's activities. Name the folder after yourself (or an alias).
+
+Open a new R Script file and save it to that new folder as **"activity1a_data_processing.R"**
+
+First, we will read in first three weeks of data and combine them, process the data a little bit, and save the merged/processed data for analysis.
+
+Secondly, we will save another new R Script file as **"activity1b_data_analysis.R"** and do (preliminary) regression analysis.
+
+Finally, we will pretend to have just gotten the final week's data in and update everything in a "reproducible" way.
     
 ## 1. RStudio Projects
 
@@ -119,7 +159,14 @@ RStudio Projects provide an opportunity for you to organize and manage all of th
 
 https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/
 
+**Data Mangement Tips**
 
+- Treat data as read-only
+    - Don't use Excel, etc, to manipulate raw data
+    - Use a single R program for all manipulation
+    - Save "cleaned" or "processed" data in easily loadable formats 
+- Differentiate data types with folders *raw* versus *processed* versus *output* (e.g., linear regression objects, etc)
+- Write dates in YYYYMMDD or equivalent format
 
 ## Tips
 
