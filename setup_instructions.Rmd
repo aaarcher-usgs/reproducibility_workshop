@@ -40,7 +40,7 @@ GitHub account <https://github.com/>
     + All repositories can be made to include more than one "owner" or "collaborator" with direct write privileges
 - **branch**
     + A particular version of a repository
-    + The "master" branch is the original version of the repository
+    + The "master" branch is the original version of the repository, which can be forked (see below) or edited directly by branch owners/collaborators.
     + "Forked" branches are any "clones" that are made by anyone other than the repository owner
 - **commit**
     + Verb: to save a change or series of changes to the repository, with an associated "commit message"
@@ -56,6 +56,7 @@ GitHub account <https://github.com/>
 - **pull request**
     + A series of commits that have been made on a forked branch that are being asked to merge with the next upstream branch (i.e., usually the master branch)
     + You will view and accept pull requests through GitHub directly
+    + *Side note: Called "pull requests" because you are requesting the branch owner to pull in your changes to their branch.*
 
 
 ### Overview
@@ -89,7 +90,7 @@ An SSH key allows your computer to talk directly with your GitHub account. Only 
 7. Click "Close" and then "View Public Key" and you should see something like this: 
 ![](images/ssh_setup4.png)
 
-8. Copy the entire text box, starting with "ssh-rsa..."
+8. Copy the entire text box, starting with "ssh-rsa...", then hit "close" and "OK."
 9. Log into your GitHub account.
 10. Navigate to your settings. (Click on your profile picture on the top right of the screen, then Settings)
 11. Click on the SSH and GPG keys tab on the left column, and you should see something like this (although empty because you have yet to add a key):
@@ -104,11 +105,11 @@ Now you're all set!
 
 ### Step 2: Clone a version of the workshop repository to your computer
 
-In this section, you will clone a verison of the workshop repository to your 
+In this section, you will clone a version of the workshop repository to your 
 computer and eventually modify the text file "roll_call" so that the instructors
-can verify that you have successfully prepared for the workshop activities. (These steps follow http://r-bio.github.io/intro-git-rstudio/.)
+can verify that you have successfully prepared for the workshop activities. (These steps loosely follow http://r-bio.github.io/intro-git-rstudio/.)
 
-![](images/GitHub_overview_branches.png)
+![](images/github_overview_keynote/github_overview_keynote.001.png)
 
 
 
@@ -119,7 +120,7 @@ can verify that you have successfully prepared for the workshop activities. (The
 3. Open RStudio, go to File > New Project
 ![](images/new_project1.tiff)
 
-4. Select "Version Control" and Git
+4. Select "Version Control" and then "Git"
 
 ![](images/new_project2.tiff)
 ![](images/new_project3.tiff)
@@ -130,7 +131,7 @@ can verify that you have successfully prepared for the workshop activities. (The
 6. Now, in order to link this project with Althea's "upstream" version, we will use the shell and the **git** language directly. Open the shell by selecting Tools > Shell...
 ![](images/shell1.tiff)
 
-7. Type in (exactly) and hit Enter:
+7. Type in (exactly; cannot copy/paste) and hit Enter:
 
 ```{r shell1, eval=F, echo=T}
 git remote add upstream https://github.com/aaarchmiller/reproducibility_workshop
@@ -138,63 +139,44 @@ git remote add upstream https://github.com/aaarchmiller/reproducibility_workshop
 
 ### Step 3: Add your name to roll_call.txt
 
-1. First we are going to create a new branch of your version of the workshop repository so that all the changes are self-contained. 
-2. In shell, type in (exactly) and press enter:
-```{r shell2, eval=F, echo=T}
-git checkout -b conduct-rollcall master
-```
-
-This creates a new branch called "conduct-rollcall" on your repository. 
-![](images/shell2.tiff)
-
-3. In the Files tab of RStudio (bottom right), you should see roll_call.txt. Open that file up, add your name, and save.
-4. In the Git tab of RStudio (top right), you should now see roll_call show up.
-5. Select roll_call by clicking in the box to the left of it (a check mark should appear).
-6. Click "Commit" button and a new window should appear:
+1. In the Files tab of RStudio (bottom right), you should see roll_call.txt. Open that file up, add your name, and save.
+2. In the Git tab of RStudio (top right), you should now see roll_call show up.
+3. Select roll_call by clicking in the box to the left of it (a check mark should appear).
+4. Click "Commit" button and a new window should appear:
 ![](images/commit1.tiff)
 
-7. Type in an informative "commit message" like above
-8. Select the "Commit" button.
-9. Enter shell again and type in this (exactly) and hit Enter:
+5. Type in an informative "commit message" like above
+6. Select the "Commit" button. You may get a message like this, which you can disregard.
+
+```{r shellx, eval=F, echo=T}
+[conduct-rollcall 942752f8] Added name to roll_call
+ Committer: Firstname Lastname <email@place.edu>
+Your name and email address were configured automatically based 
+on your username and hostname. Please check ...
+```
+
+7. Now you will push the commit to your repository on GitHub. You can do this with the **green arrow** (push) in the Git tab of RStudio, or in shell. To do this in shell, simply  type in this (exactly; cannot copy/paste) and hit Enter:
 ```{r shell3, eval=F, echo=T}
-git push origin conduct-rollcall
+git push origin master
 ```
 
 Note: A prompt may appear asking for you to enter your username and password for GitHub. If it does, just enter the same username and password as you used to make your GitHub account. (This is platform-specific, don't worry if it doesn't appear). 
 
-Now, you have changed roll_call in your "conduct-rollcall" branch, but now you need to merge it back with your main repository.
+Now, you have changed roll_call in your forked branch (i.e., your version of the repository). To verify, you should be able to see your name on roll_call.txt on the GitHub website (on your forked repository, it has not yet been merged with Althea's master branch).
 
-1. Go to GitHub and view your forked repository. In this example, it is "https://github.com/yourusername/reproducibility_workshop"
-2. You should see something like this:
-![](images/capture4.jpg)
-3. Click the "Pull Request" link as in image above.
-4. In the dropdown indicated in the image below, choose "yourusername/reproducibility_workshop" 
-![](images/capture1.jpg)
-5. After you do this, it will reload and say "base: master" ... "compare: conduct-rollcall" as in the next image. Now, you can add in another message in the Write window and click the "Create pull request" button:
-![](images/capture2.jpg)
-6. Now, you should get a message about how this branch has no conflicts and can be merged automatically. 
-![](images/merge_branch3.tiff)
-7. Select the green "Merge pull request" button and then "Confirm merge".
-8. Close the pull request.
-9. Go back to your forked repository, and click on "Branches (2)"
-10. Delete the conduct-rollcall branch by clicking on the trashcan to the right of it.
-11. In RStudio, make sure you select "master" from the dropdown menu that currently says "conduct-rollcall" and you should get a pop-up message about switching back to the master branch. *Note: This dropdown is on the far right in the Git tab, and you may need to expand that tab's size to see it.*
+The next step is to send your modified roll_call.txt version to the instructors to merge with the original branch. 
 
-![](images/capture3.jpg)
-
-12. Pull changes using the blue down arrow in image above. This action will pull the merged roll_call document from GitHub.
-
-You have successfully changed "roll_call" document on your forked branch, but now you need to send it to the instructors to merge with the original branch. 
-
-### Step 4: Add your rollcall modifications to Althea's repository
+### Step 4: Add your roll_call modifications to Althea's repository
 
 1. Go to your forked repository on the GitHub website.
 2. Click on the grey "pull request" button.
 3. Now, click on the green "Pull request" link. 
+![](images/pullrequest1.png)
 4. Add "Yourname roll call" as title, with a short message:
-![](images/capture5.jpg)
-5. Verify that base fork and head fork match above screen shot, except with yourusername instead of "Magswell". Now, create the pull request (green button).
-6. There should be no conflicts, and this will send an email to Althea asking for her to view your changes and accept them into her main repository.
+![](images/pullrequest2.png)
+5. Verify that base fork and head fork match above screen shot, except with yourusername instead of "vitensek". Now, create the pull request (green button).
+6. There should be no conflicts (as in image below), and this will send an email to Althea asking for her to view your changes and accept them into her main repository.
+![](images/pullrequest3.png)
 
 
-If you have completed all of these steps, you are now ready to participate in the workshop. Again, contact Althea (althea.archmiller [at] gmail [dot] com) if you have any problems!
+If you have completed all of these steps, you are now ready to participate in the workshop--and use GitHub for your own projects. Again, contact Althea (althea.archmiller [at] gmail [dot] com) if you have any problems!
