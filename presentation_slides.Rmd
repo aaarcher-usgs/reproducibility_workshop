@@ -87,7 +87,7 @@ summary(lm.out)
 The goal for this workshop is to help you develop the tools to develop a workflow to maximize reproducibility, collaborations, and research impact.
 
 1. RStudio Projects for organizing data, code, and output
-2. R-Markdown and R-Oxygen for documenting your code
+2. R-Markdown and R-Oxygen for documenting your code and creating reproducible reports
 3. GitHub for version-control, collaborating and archiving
 
 ## 1. RStudio Projects
