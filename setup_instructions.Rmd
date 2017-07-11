@@ -33,6 +33,8 @@ GitHub account <https://github.com/>
 
 ### Terminology
 
+![](images/github_overview_keynote/github_overview_keynote.002.png)
+
 - **repository**
     + A project (here, an RStudio Project) that contains code, analysis, output, etc that is held by GitHub
     + Repositories may be public or private
