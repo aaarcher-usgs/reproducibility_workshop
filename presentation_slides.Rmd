@@ -1,13 +1,27 @@
 ---
 title: "Developing a Workflow to Maximize Reproducibility and Research Impact: Managing Data, Computer Code, and Projects for Success"
-author: "John R. Fieberg & Althea A. ArchMiller"
-date: "4/11/2017"
+author: "Althea A. ArchMiller & John R. Fieberg"
+date: "7/12/2017"
 output: beamer_presentation
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+## Welcome!
+
+### Developing a Workflow to Maximize Reproducibility and Research Impact: Managing Data, Computer Code, and Projects for Success
+
+Althea A. ArchMiller *Assistant Professor, Biology, Concordia College, MN*
+
+John R. Fieberg *Associate Professor of Quantitative Ecology, University of Minnesota*
+
+\textcolor{blue}{Before we begin, please open up the reproducible\_workshop repository in RStudio and install these packages}:
+
+- knitr
+- ezknitr
+- devtools
 
 ## Why worry about reproducibility?
 
@@ -178,3 +192,90 @@ https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/
 
 "I can do reproducible work in R (making me happy) and format the output report in Word (making my collaborators happy)" - Richard Layton http://rmarkdown.rstudio.com/articles_docx.html
 
+## Documenting Code
+
+Native R Scripts (.R extensions) (or any analysis code) are generally not designed for reading, but the **knitr** library has been designed for converting R scripts into readable reports, such as Word, PDF, and/or html documents.
+
+Not only do these types of reports help with collaborating, they provide a great framework for archiving your analyses and results.
+
+Example: https://conservancy.umn.edu/handle/11299/181607
+
+## Documenting Code
+
+General tips for better coding:
+
+- Consistent and meaningful naming conventions
+    + \textcolor{red}{a = b*c}
+    + weekly.pay = hours.worked*pay.rate (not cross-compatible)
+    + weekly_pay = hours_worked*pay_rate
+    + weeklyPay = hoursWorked*payRate
+- Using YYYYMMDD or equivalent for dates
+- When possible, bundle data, code, figures/tables together with **knitr** package using R-Markdown or R-Oxygen languages
+
+## Documenting Code: R-Markdown
+
+R-Markdown combines \textcolor{blue}{markdown} language, which is "an easy-to-write plain text format" and embedded \textcolor{blue}{R code chunks} that are "run so their output can be included in the final document" [1] \pause
+
+\begin{columns}
+\begin{column}{0.48\textwidth}
+\includegraphics[width=2in]{images/rmd1.png}
+\end{column}
+\begin{column}{0.48\textwidth}
+\includegraphics[width=2in]{images/rmd2.png}
+\end{column}
+\end{columns}
+
+[1] www.rmarkdown.rstudio.com
+
+## Documenting code: R-Markdown
+
+Exercise 2a: Introduction to R-Markdown
+
+- File > New File > R Markdown...
+- Choose "html" - optionally put in a title and press "OK"
+- This R-Markdown template is ready to "knit" into an html as-is
+    + Click the blue Knit button 
+    + Save in your student_project folder as "activity2a_intro_rmarkdown.Rmd"
+    + See the resultant html
+- Take a few minutes to modify the .Rmd and view how the changes appear in the knit html document.
+    
+<https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf>
+
+## Documenting code: ezknitr
+
+What folder did the html end up in? \pause
+
+Now imagine if you wanted to keep the programs/scripts in a folder separate from reports (\textcolor{blue}{highly recommended!})? You can easily direct the output html file into a different folder using **ezknitr** package.
+
+\small
+```{r ezknitr, eval=FALSE, echo=T}
+library(ezknitr)
+ezknit("student_folders/yours/activity2a_intro_rmarkdown.Rmd",
+       out_dir = "student_folders/archmiller_a/reports", 
+       fig_dir = "figures",
+       keep_md = F)
+```
+
+## Documenting Code: R-Oxygen
+
+Instead of using the R-Markdown language, you can also use **pure R scripts** plus **Roxygen comments** (#') to create fully reproducible reports! \pause
+
+Benefit: The entire program can be written and run in the familiar R Script file, then "spun" into an html/Word/pdf document at any point.
+    + Learning to code with R-Oxygen is arguably more natural since we already use # for commenting \pause
+    
+Additionally, use #+ to define and label R chunks like we did with the ```{r ...} code in the R-Markdown language. \pause
+
+## Documenting Code: R-Oxygen
+
+Activity 2b: Introduction to R-Oxygen
+
+Here, we'll quickly convert "activity1b_data_analysis.R" into an html document!
+
+1. Open "activity1b_data_analysis.R" 
+2. Save As... "student_folder/yours/activity2b_intro_roxygen.R"
+
+## LaTeX
+
+(Page 75 begins the mathematical symbols)
+
+https://tobi.oetiker.ch/lshort/lshort.pdf
