@@ -52,13 +52,13 @@ Working towards future reproducibility makes my code easier for my collaborators
 
 ## Is my research reproducible?
 
-- Are your research documents stored in these formats?
+- What formats are your research documents stored in? \pause
     - .csv
     - .txt
     - .pdf
     - .html
     - .R/.Rdata
-        - \textcolor{blue}{YES!}
+        - \textcolor{blue}{YES!} \pause
         
     - .doc/.docx
     - .sas
@@ -182,10 +182,7 @@ https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/
 - Differentiate data types with folders *raw* versus *processed* versus *output* (e.g., linear regression objects, etc)
 - Write dates in YYYYMMDD or equivalent format
 
-## Tips
 
-- Don't use github with large files :-(
-- Create new projects in GitHub first, then sync them with RStudio
 
 
 ## Why R-Markdown for manuscripts?
@@ -245,7 +242,7 @@ Exercise 2a: Introduction to R-Markdown
 
 What folder did the html end up in? \pause
 
-Now imagine if you wanted to keep the programs/scripts in a folder separate from reports (\textcolor{blue}{highly recommended!})? You can easily direct the output html file into a different folder using **ezknitr** package.
+Now imagine if you wanted to keep the programs/scripts in a folder separate from reports (\textcolor{blue}{highly recommended!}). You can easily direct the output html file into a different folder using **ezknitr** package.
 
 \small
 ```{r ezknitr, eval=FALSE, echo=T}
@@ -276,6 +273,97 @@ Here, we'll quickly convert "activity1b_data_analysis.R" into an html document!
 
 ## LaTeX
 
-(Page 75 begins the mathematical symbols)
+Another benefit of using knitr/Rmd/Roxygen for creating statistical reports is the nice interface with LaTeX equation syntax.
 
-https://tobi.oetiker.ch/lshort/lshort.pdf
+**Activity 3. LaTeX Equations**
+
+1. Create a new .Rmd PDF document
+2. Save it as "student_folders/yours/activity3_latex.Rmd"
+3. Create the following in the output PDF
+    + $\alpha + \beta = 2\theta$
+    + $\pi^2 = 9.86$
+    + $\sum_{i=1}^n \sqrt{i} = 42$ (advanced)
+4. When you "knit" remember to use ezknitr:
+
+\small
+```{r ezknitr2, eval=FALSE, echo=T}
+library(ezknitr)
+ezknit("student_folders/yours/activity3_latex.Rmd",
+       out_dir = "student_folders/archmiller_a/reports", 
+       fig_dir = "figures",
+       keep_md = F)
+```
+
+<https://tobi.oetiker.ch/lshort/lshort.pdf> (hint: tables on p75)
+
+## Project Workflow w/ RStudio & knitr
+
+Example project directory
+
+- data/
+    + raw_data/
+    + processed_data/
+    + output_data/
+- manuscript/
+    + ms_figures/
+    + transmissions/
+    + submission/
+- output/
+    + figures/
+- programs/
+- project_file.Rproj
+
+## Project Workflow w/ RStudio & knitr
+
+- **data/**
+    + **raw_data/**
+        + survey_data20161227.csv
+        + survey_data20161230.csv
+        + survey_data20170103.csv
+    + **processed_data/**
+        + survey_data_all.Rdata
+    + **output_data/**
+        + model_out.Rdata 
+        
+## Project Workflow w/ RStudio & knitr
+
+- **programs/**
+    + a_data_processing.R
+    + b_data_analysis.R
+    + c_plots.R 
+    
+## Project Workflow w/ RStudio & knitr
+
+- **output/**
+    + a_data_processing.html
+    + b_data_analysis.html
+    + c_plots.html
+    + **figures/**
+        + eda1.jpg
+        + scatter1.jpg
+        
+## Project Workflow w/ RStudio & knitr
+
+- **manuscript/**
+    + ms.Rmd
+    + ms.pdf
+    + ms.docx
+    + **ms_figures/**
+        + fig1.jpg
+        + fig2.jpg\pause
+    + **transmittals/** 
+        + **from_john/**
+        +   ms20170523.docx
+        +   ms20170625.docx
+        + **from_bob/**
+        +   ms20170626.docx \pause
+    + **submission/** 
+        + ms.pdf
+        + fig1.pdf
+        + fig2.pdf
+        + coverletter.docx
+        
+## Tips
+
+- Don't use github with large files :-(
+- Create new projects in GitHub first, then sync them with RStudio
