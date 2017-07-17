@@ -1,0 +1,81 @@
+---
+title: "Report on Invertebrates on Dutch Coast"
+author: "Stu Dent"
+date: "7/17/2017"
+output: 
+  word_document:
+    fig_caption: yes
+    reference_docx: word-styles-reference-01.docx
+csl: ecology.csl
+bibliography: myrefs.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Markdown Introduction
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+The formating for this manuscript is controlled by the template "word-styles-reference-01.docx." If you would like to change the formatting to match a journal's preferences, for example, you can follow the instructions in this article:  <http://rmarkdown.rstudio.com/articles_docx.html>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can **Knit** to PDF or to Microsoft word, just chose the appropriate dropdown from the **Knit** button. 
+
+## Style notes:
+
+- You can make words **bold** with two asterisks, *italicized* with one.
+- Hashtags denote a header, and the hierarchy is defined by the number of hashtags.
+
+## How to set up references
+
+You can cite references using the **citr** add-in. With **citr** you can cite papers in line like @Fieberg:2008 is fond of doing, or parenthetically [@R:2014]. You can also cite multiple sources at once [@Zuur:2007; @Fieberg:2008; @Plummer:2013]. References can be added into the myrefs.bib file directly, or created with BibTeX through LaTeX. 
+
+# Methods
+
+## Data
+
+```{r dataEntry, echo=FALSE, eval=T}
+# Load data by week
+rikz.data.1 <- read.csv("../../../data/raw_data/RIKZ_1.csv")
+rikz.data.2 <- read.csv("../../../data/raw_data/RIKZ_2.csv")
+rikz.data.3 <- read.csv("../../../data/raw_data/RIKZ_3.csv")
+
+# Combine data together
+rikz.data <- rbind(rikz.data.1, rikz.data.2, rikz.data.3)
+test.week.length <- table(rikz.data$week)
+```
+
+The data has been collected by week from several areas along the Dutch coast (Fig. 1). 
+
+![1. Data collection sites [@Zuur:2007].](report_figures/map.png)
+
+## Statistical Analysis
+
+We used simple linear regression to relate invertebrate richness ($y$) to NAP ($x$):
+
+$$
+y = \beta_{0} + \beta_{1}x.
+$$
+
+# Results
+
+The results of the regression analysis demonstrate a significant, negative relationship between richness and NAP (Fig. 2).
+
+```{r analysis, eval=T, echo=T}
+lm.out <- lm(Richness~NAP, data = rikz.data)
+summary(lm.out)
+```
+
+
+```{r results, eval=T, echo=F, fig.path="report_figures/", dev="png",fig.show='hide'}
+## Step 3. Plot results
+plot(rikz.data$NAP, rikz.data$Richness,
+     xlab = "NAP", ylab = "Richness", col=rikz.data$week)
+abline(lm.out)
+legend(1.5,15,unique(rikz.data$week), col=1:length(rikz.data$week),pch=1)
+```
+
+![2. The relationship between invertebrate richness and NAP [@Zuur:2007].](report_figures/results-1.png)
+
+# References
