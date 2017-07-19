@@ -67,6 +67,7 @@ lm.out <- lm(Richness~NAP, data = rikz.data)
 summary(lm.out)
 ```
 
+The fitted relationship was `r round(lm.out$coefficients[1],digits=2)` + `r round(lm.out$coefficients[2],digits=2)`x.
 
 ```{r results, eval=T, echo=F, fig.path="report_figures/", dev="png",fig.show='hide'}
 ## Step 3. Plot results
@@ -76,6 +77,6 @@ abline(lm.out)
 legend(1.5,15,unique(rikz.data$week), col=1:length(rikz.data$week),pch=1)
 ```
 
-![2. The relationship between invertebrate richness and NAP [@Zuur:2007].](report_figures/results-1.png)
+![2. The relationship between richness (y) and NAP (x): y = `r round(lm.out$coefficients[1],digits=2)` + `r round(lm.out$coefficients[2],digits=2)`x [@Zuur:2007].](report_figures/results-1.png)
 
 # References
