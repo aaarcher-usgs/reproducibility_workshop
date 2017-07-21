@@ -9,16 +9,15 @@ output: beamer_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Welcome!
+## Developing a Workflow to Maximize Reproducibility and Research Impact: Managing Data, Computer Code, and Projects for Success
 
-### Developing a Workflow to Maximize Reproducibility and Research Impact: Managing Data, Computer Code, and Projects for Success
+Althea A. ArchMiller &  John R. Fieberg
 
-- Althea A. ArchMiller
-    - Assistant Professor, Biology, Concordia College, MN
-- John R. Fieberg
-    - Associate Professor of Quantitative Ecology, College of Fisheries, Wildlife, & Conservation Biology, University of Minnesota
+\centering
+\includegraphics[width=3in]{images/reproducible_humor_copy.png}
+\centering
 
-\textcolor{blue}{Before we begin, please open up the reproducible\_workshop repository in RStudio and install these packages}:
+\textcolor{blue}{Before we begin, please open up the reproducible\_workshop project in RStudio and install these packages}:
 
 - knitr
 - ezknitr
@@ -217,7 +216,9 @@ Activity Overview:
 
 \centering
 \includegraphics[width=3in]{images/knitr_quote.png}
-\centering
+\centering 
+
+\pause
 
 "I can do reproducible work in R (making me happy) and format the output report in Word (making my collaborators happy)" - Richard Layton http://rmarkdown.rstudio.com/articles_docx.html
 
