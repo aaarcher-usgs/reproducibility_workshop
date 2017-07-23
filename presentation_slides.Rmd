@@ -17,7 +17,7 @@ Althea A. ArchMiller &  John R. Fieberg
 \includegraphics[width=3in]{images/reproducible_humor_copy.png}
 \centering
 
-\textcolor{blue}{Before we begin, please open up the reproducible\_workshop project in RStudio and install these packages}:
+\textcolor{blue}{Before we begin, please open up the reproducibility\_workshop project in RStudio and install these packages}:
 
 - knitr
 - ezknitr
@@ -63,13 +63,13 @@ What formats are your research documents stored in? \pause
 - .pdf
 - .html
 - .R/.Rdata
-    - \textcolor{blue}{YES - these are considered "reproducible"!} \pause
+    - \textcolor{blue}{YES - these are considered "reproducible"} \pause
     
 - .doc/.docx
 - .sas
 - .xls/.xlsx
 - any other proprietary file format
-    - \textcolor{red}{NO - these are not "reproducible"!}
+    - \textcolor{red}{NO - these are not "reproducible"}
 
 ## Is my research reproducible?
 
@@ -122,7 +122,7 @@ Do you treat your data as read-only?
 The goal for this workshop is to help you develop the tools to develop a workflow to maximize reproducibility, collaborations, and research impact.
 
 1. RStudio Projects for organizing data, code, and output \pause
-2. R-Markdown and R-Oxygen with **knitr** for documenting your code and creating reproducible reports \pause
+2. R-Markdown and R-Oxygen with knitr for documenting your code and creating reproducible reports \pause
 3. GitHub for version-control, collaborating and archiving
 
 # 1. RStudio Projects for organizing data, code, and output
@@ -279,8 +279,8 @@ Now imagine if you wanted to keep the programs/scripts in a folder separate from
 \small
 ```{r ezknitr, eval=FALSE, echo=T}
 library(ezknitr)
-ezknit("student_folders/yourname/activity2a_intro_rmarkdown.Rmd",
-       out_dir = "student_folders/archmiller_a/reports", 
+ezknit("student_folders/yournm/activity2a_intro_rmarkdown.Rmd",
+       out_dir = "student_folders/yournm/reports", 
        fig_dir = "figures",
        keep_md = F)
 ```
