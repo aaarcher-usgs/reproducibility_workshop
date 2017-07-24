@@ -1,25 +1,42 @@
-#' # Linear regression of RIKZ data
+# Linear regression of RIKZ data
+Preamble - load libraries and clear environment
 
-#' Preamble - load libraries and clear environment
+```{r }
 remove(list=ls())
+```
 
-#' ## Step 1. Load data
+## Step 1. Load data
+
+```{r }
 load("data/processed_data/rikz.Rdata")
+```
 
-#' ## Step 2. Linear regression
+## Step 2. Linear regression
+
+```{r }
 lm.out <- lm(Richness~NAP, data = rikz.data)
 summary(lm.out)
+```
 
-#' ## Step 3. Plot results
-#+ rikz_lm, fig.width=8, fig.height=5
+## Step 3. Plot results
+
+```{r rikz_lm2, fig.width=8, fig.height=5}
 plot(rikz.data$NAP, rikz.data$Richness)
 abline(lm.out)
+```
 
-#' ### Footer 
-#' 
-#' Session Information
+### Footer 
+
+Session Information
+
+```{r }
 devtools::session_info()
-#' 
-#+ spin, warning = FALSE, error = FALSE
+```
+
+
+
+```{r spin, warning = FALSE, error = FALSE}
 ezspin("student_folders/prof_dorkwood/activity2b_intro_roxygen.R", out_dir = "student_folders/prof_dorkwood/reports", fig_dir = "figures", keep_md=F)
 #knitr::opts_chunk$set(warning = FALSE,error = FALSE)
+```
+
