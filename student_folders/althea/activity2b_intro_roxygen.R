@@ -17,7 +17,7 @@ load(file = "data/processed_data/rikz.Rdata")
 #' __________________________________________________________________
 #' ### Step 2. Linear **regression**
 #' 
-#' $\alpha$
+#' $\alpha + \beta$
 #' 
 # This is a simple linear regression
 lm.out <- lm(Richness~NAP, data = rikz.data)
@@ -33,4 +33,4 @@ abline(lm.out)
 #' Session info
 devtools::session_info()
 #' 
-#' ezspin("student_folders/althea/activity2b_intro_roxygen.R", out_dir = "student_folders/althea/reports",fig_dir = "figures",keep_md = FALSE)
+#' 
