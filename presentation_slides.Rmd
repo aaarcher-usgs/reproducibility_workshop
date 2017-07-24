@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 Althea A. ArchMiller &  John R. Fieberg
 
 \centering
-\includegraphics[width=3in]{images/reproducible_humor_copy.png}
+\includegraphics[width=2.5in]{images/reproducible_humor_copy.png}
 \centering
 
 \textcolor{blue}{Before we begin, please open up the reproducibility\_workshop project in RStudio and install these packages}:
