@@ -17,11 +17,6 @@ Althea A. ArchMiller &  John R. Fieberg
 \includegraphics[width=2.5in]{images/reproducible_humor_copy.png}
 \centering
 
-\textcolor{blue}{Before we begin, please open up the reproducibility\_workshop project in RStudio and install these packages}:
-
-- knitr
-- ezknitr
-- devtools
 
 ## Why worry about reproducibility?
 
@@ -75,15 +70,10 @@ What formats are your research documents stored in? \pause
 
 - Is your code linear? 
     - Clear environment often and at beginning of script
-    - Don't save .Rdata or history
     - Each program should focus on one main task or analysis
     - Don't rely on manual commenting/uncommenting
-
-\includegraphics[width=4in]{images/global_options.png}
-
-## Is my research reproducible?
-
-So, what's wrong here?
+    
+\pause
 
 ```{r, eval=F, echo=T}
 # Here, I want to know what variables are significant?
@@ -115,7 +105,7 @@ Do you treat your data as read-only?
 - Don't use Excel, etc., to manipulate raw data
 - Use an R script for data processing
     - Process data in one script, then save for loading into subsequent scripts
-- When archiving, provide both raw data and processing code
+- When archiving, provide raw data and processing code not just final tables
 
 ## Workshop Outline
 
