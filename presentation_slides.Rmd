@@ -119,6 +119,20 @@ The goal for this workshop is to help you develop the tools to develop a workflo
 
 ## 1: Introduction to RStudio
 
+RStudio is a GUI for R that eases 
+
+- programming
+- debugging
+- data organization
+- data processing
+- project managment
+- program version-controlling and archiving
+- plotting 
+- R library installation and updating \pause
+- Reproduciblity!
+
+## 1: Introduction to RStudio
+
 \includegraphics[width=4.5in]{images/rstudio_annotated.png}
 
 ## 1: Introduction to RStudio
@@ -139,9 +153,13 @@ Think about a typical research project, maybe a dissertation chapter or an exper
 - Paper/Manuscript-related documents
 - Sharing documents ("transmittals")
 - Metadata
-- Maps or other deliverables
+- Maps or other deliverables \pause
 
-RStudio Projects provide an opportunity for you to organize and manage all of these types of folders in **one place** in a way that **relatively links** everything together and **eases sharing**.\pause
+RStudio Projects provide an opportunity for you to organize and manage all of these types of folders in **one place** in a way that **relatively links** everything together and **eases sharing**.
+
+## 1. RStudio Projects 
+
+What are RStudio projects? \pause
 
 Up next, Activity 1!    
 
@@ -161,22 +179,13 @@ Context: Abundance data from ~75 invertebrate species sampled on various beaches
 
 ## Activity 1: Data management and updating
 
-Before we begin today, we need sync your individual versions of the workshop documents with Althea's master branch:\pause
+Introduction to RStudio
 
-1. Open RStudio and your reproducibility_workshop.rproj. (File > Open Project...)
-2. Open shell (Tools > Shell...)
-3. Type in exactly, then press enter:
-```{r shell1, eval=F, echo=T}
-$ git fetch upstream
-```
-4. Type in exactly, then press enter:
-```{r shell2, eval=F, echo=T}
-$ git checkout master
-``` 
-5.  Type in exactly, then press enter:
-```{r shell3, eval=F, echo=T}
-$ git merge upstream/master
-```
+- Open RStudio
+- Set up global options
+- Create a project
+
+Now we can do some analysis of invertebrates!
 
 ## Activity 1: Data management and updating
 
@@ -192,8 +201,6 @@ Activity Overview:
 
 3. We will pretend to have just gotten the final week's data in and update everything in a "reproducible" way.
     
-
-
 
 # 2. R-Markdown and R-Oxygen with knitr for documenting your code and creating reproducible reports
 
