@@ -137,19 +137,7 @@ RStudio is a GUI for R that eases
 - R library installation and updating \pause
 - Reproduciblity!
 
-## 1: Introduction to RStudio
-
-\includegraphics[width=4.5in]{images/rstudio_annotated.png}
-
-## 1: Introduction to RStudio
-
-\includegraphics[width=4.5in]{images/rstudio_overview.png}
-
-## 1: Introduction to RStudio
-
-\includegraphics[width=4.5in]{images/rstudio_overview2.png}
-
-## 1. RStudio Projects
+## 1. Introduction to RStudio
 
 Think about a typical research project, maybe a dissertation chapter or an experiment that you've managed from data collection through publication. What are typical **folders** that you've used? \pause
 
@@ -163,11 +151,53 @@ Think about a typical research project, maybe a dissertation chapter or an exper
 
 RStudio Projects provide an opportunity for you to organize and manage all of these types of folders in **one place** in a way that **relatively links** everything together and **eases sharing**.
 
-## 1. RStudio Projects 
+## 1: Introduction to RStudio
 
-What are RStudio projects? \pause
+\includegraphics[width=4.5in]{images/github_overview_keynote004.png}
 
-Up next, Activity 1!    
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote005.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote006.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote007.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote008.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote009.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote010.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote011.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/github_overview_keynote012.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/rstudio_annotated.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/rstudio_overview.png}
+
+## 1: Introduction to RStudio
+
+\includegraphics[width=4.5in]{images/rstudio_overview2.png}
 
 ## Activity 1: Data management and updating
 
