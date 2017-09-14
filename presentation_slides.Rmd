@@ -17,6 +17,12 @@ Althea A. ArchMiller &  John R. Fieberg
 \includegraphics[width=2.5in]{images/reproducible_humor_copy.png}
 \centering
 
+- Program R <www.r-project.org> (required)
+- RStudio <www.rstudio.com/products/RStudio> (required)
+- Git <git-scm.com> (optional)
+- GitHub account <github.com> (optional)
+
+
 
 ## Why worry about reproducibility?
 
@@ -401,7 +407,9 @@ Example project directory
         
 ## Project Workflow w/ RStudio & knitr
 
-Example of an RStudio project that Althea & John used from conceptualization through publication. \pause
+Example of an RStudio project that Althea & John used from conceptualization through publication. 
+
+\pause
 
 ### Activity 3: Creating a reproducible report using R-Markdown
 
@@ -438,7 +446,44 @@ Once you're up and running, it's (usually) simple to use!
 ## GitHub Overview
 
 \includegraphics[width=4.5in]{images/github_overview_presi.png}
+
+## GitHub Terminology
+
+- **repository**
+    + A project (here, an RStudio Project) that contains code, analysis, output, etc that is held by GitHub
+    + Repositories may be public or private
+    + Most repositories will have one "owner" with direct writing privileges; however,
+    + All repositories can be made to include more than one "owner" or "collaborator" with direct write privileges \pause
+- **branch**
+    + A particular version of a repository
+    + The "master" branch is the original version of the repository, which can be forked (see below) or edited directly by branch owners/collaborators.
+    + "Forked" branches are any "clones" that are made by anyone other than the repository owner
+    
+## GitHub Terminology
+
+- **commit**
+    + Verb: to save a change or series of changes to the repository, with an associated "commit message"
+    + Noun: the saved changes as an entity, which can be "pushed" back to the associated branch \pause
+- **push**
+    + To merge 1 or more commits back to the associated branch
+    + You can only push directly to repositories that you have ownership or collaborator privileges for
+    + If you don't have direct writing privileges, you have to create a "pull request"
+    + The direction of a push is from your local version (RStudio) to GitHub server
+    
+## GitHub Terminology
+
+- **pull**
+    + To take any changes that have been made to the associated branch and sync them with your local version
+    + The direction of a pull is from the GitHub server to your local version (RStudio) \pause
+- **pull request**
+    + A series of commits that have been made on a forked branch that are being asked to merge with the next upstream branch (i.e., usually the master branch)
+    + You will view and accept pull requests through GitHub directly
+    + *Side note: Called "pull requests" because you are requesting the branch owner to pull in your changes to their branch.*
         
+## GitHub Overview
+
+\includegraphics[width=4.5in]{images/github_overview_presi.png}
+
 ## Activity 4: GitHub in RStudio
 
 First, we will use the built-in interface for GitHub within RStudio. 
