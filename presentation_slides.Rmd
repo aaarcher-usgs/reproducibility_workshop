@@ -368,6 +368,9 @@ ezknit("student_folders/yourname/activity3_latex.Rmd",
 
 <https://tobi.oetiker.ch/lshort/lshort.pdf> (hint: tables on p75)
 
+
+# Putting RStudio & knitr together: Project Workflow
+
 ## Project Workflow w/ RStudio & knitr
 
 Example project directory
@@ -384,6 +387,7 @@ Example project directory
     + figures/
 - programs/
 - project_file.Rproj
+
 
 ## Project Workflow w/ RStudio & knitr
 
