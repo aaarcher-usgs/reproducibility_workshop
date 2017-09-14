@@ -181,9 +181,14 @@ Context: Abundance data from ~75 invertebrate species sampled on various beaches
 
 Introduction to RStudio
 
-- Open RStudio
-- Set up global options
+- Open RStudio \pause
+- Set up global options 
+
+Remember to not save .Rdata or history! This is important for ensuring that your code is linear and reproducible (i.e., at the beginning of each script, you load all the data you will need for that entire script - no more, no less!) \pause
+
 - Create a project
+
+Now, your R code pathways will be relatively linked to where that .Rproj file is located. This eases programming and collaboration! \pause
 
 Now we can do some analysis of invertebrates!
 
@@ -191,7 +196,7 @@ Now we can do some analysis of invertebrates!
 
 1. In the File window of RStudio, copy the **student_folders/student_template** folder. Rename the folder after yourself (or an alias).
 
-2. Open a new R Script file and save it to that new folder as **student_folders/yourname/activity1a_data_processing.R** \pause
+2. Open a new R Script file and save it to that new folder as **student_folders/ yourname/activity1a_data_processing.R** \pause
 
 Activity Overview:
 
@@ -200,7 +205,6 @@ Activity Overview:
 2. We will save another new R Script file as **"activity1b_data_analysis.R"** and code/run some preliminary regression analysis.
 
 3. We will pretend to have just gotten the final week's data in and update everything in a "reproducible" way.
-    
 
 # 2. R-Markdown and R-Oxygen with knitr for documenting your code and creating reproducible reports
 
