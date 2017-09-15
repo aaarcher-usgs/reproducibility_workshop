@@ -222,7 +222,7 @@ Introduction to RStudio
 
 Remember to not save .Rdata or history! This is important for ensuring that your code is linear and reproducible (i.e., at the beginning of each script, you load all the data you will need for that entire script - no more, no less!) \pause
 
-- Create a project
+- Create a project (using existing, unzipped directory)
 
 Now, your R code pathways will be relatively linked to where that .Rproj file is located. This eases programming and collaboration! \pause
 
@@ -518,19 +518,25 @@ Once you're up and running, it's (usually) simple to use!
 
 \includegraphics[width=4.5in]{images/github_overview_presi.png}
 
-## Activity 4: GitHub in RStudio
+## Activity 4: Sync today's Rstudio project with GitHub
 
-First, we will use the built-in interface for GitHub within RStudio. 
+1. Add git repository to your RStudio project (in RStudio)
+2. Commit all of today's work (in RStudio)
+3. Push to GitHub (GitHub and RStudio shell)
+    - In GitHub, new repository of **same name** as your project (here: "TWS_reproducibility_workshop")
+    - Open RStudio shell (In RStudio, Tools > Shell...)
 
-Secondly, we will use the most common git commands in shell. \pause
+\small
 
-```{r shell, eval=F,echo=T}
-git pull origin master # To pull
-git add data # add files to a commit
-git commit -m "commit message here" #commit
-git push origin master # To push commit(s)
+```{r gitActivity, eval=F, echo=T}
+git remote add origin https://github.com/ 
+    gitusername/TWS_reproducibility_workshop.git
+git config remote.origin.url 
+    git@github.com:gitusername/TWS_reproducibility_workshop.git
+git push origin master
 ```
 
+## GitHub
         
 Additional GitHub Tips
 
