@@ -31,42 +31,6 @@ GitHub account <https://github.com/>
 
 *Private repositories are helpful for research projects in progress, protecting your work until you are ready to publish.*
 
-### Terminology
-
-![](images/github_overview_keynote/github_overview_keynote.002.png)
-
-- **repository**
-    + A project (here, an RStudio Project) that contains code, analysis, output, etc that is held by GitHub
-    + Repositories may be public or private
-    + Most repositories will have one "owner" with direct writing privileges; however,
-    + All repositories can be made to include more than one "owner" or "collaborator" with direct write privileges
-- **branch**
-    + A particular version of a repository
-    + The "master" branch is the original version of the repository, which can be forked (see below) or edited directly by branch owners/collaborators.
-    + "Forked" branches are any "clones" that are made by anyone other than the repository owner
-- **commit**
-    + Verb: to save a change or series of changes to the repository, with an associated "commit message"
-    + Noun: the saved changes as an entity, which can be "pushed" back to the associated branch
-- **push**
-    + To merge 1 or more commits back to the associated branch
-    + You can only push directly to repositories that you have ownership or collaborator privileges for
-    + If you don't have direct writing privileges, you have to create a "pull request"
-    + The direction of a push is from your local version (RStudio) to GitHub server
-- **pull**
-    + To take any changes that have been made to the associated branch and sync them with your local version
-    + The direction of a pull is from the GitHub server to your local version (RStudio)
-- **pull request**
-    + A series of commits that have been made on a forked branch that are being asked to merge with the next upstream branch (i.e., usually the master branch)
-    + You will view and accept pull requests through GitHub directly
-    + *Side note: Called "pull requests" because you are requesting the branch owner to pull in your changes to their branch.*
-
-
-### Overview
-
-Althea created the repository for the reproducibility workshop on her GitHub account (<https://github.com/aaarchmiller/reproducibility_workshop>). John Fieberg and Althea are the only ones that have direct editing privileges; however, anyone can create a "clone" of the repository (aka a "forked branch") and edit it on their own computer. Changes can then be sent back to Althea as a "pull request," which she can either ignore or merge with the main "branch."
-
-Once you have a repository set up on GitHub and synced with RStudio, you can make changes, "commit" them with an associated "commit message," and then "push" them back to *your* branch (which will likely be the "master branch" if it is your respository or a "forked branch" if it is a clone of another repository). You will also need to "pull" the most up-to-date files from GitHub to your local cloned version of the repository *if* you have made changes on another computer, on GitHub directly, or if someone else is making changes directly to the main branch.
-
 ## Instructions for setting up Git using GitHub and RStudio
 
 At the end of this introduction, you will add your name to the workshop roll call, signalling to the instructors that you have successfully set up GitHub. If at any point you run across errors or concerns, please email Althea at althea.archmiller [at] gmail [dot] com. 
@@ -75,7 +39,7 @@ At the end of this introduction, you will add your name to the workshop roll cal
 
 #### Set up SSH key
 
-An SSH key allows your computer to talk directly with your GitHub account. Only do this step on a computer that you will frequently be using with RStudio and GitHub. If you are on a public computer or a borrowed laptop for the workshop, we recommend skipping this step.
+An SSH key allows your computer to talk directly with your GitHub account. Only do this step on a computer that you will frequently be using with RStudio and GitHub. *If you are on a public computer or a borrowed laptop for the workshop, we recommend skipping this step.*
 
 1. Open RStudio and Tools > Global Options
 2. Click on Git/SVN tab on left column of Global Options
@@ -105,9 +69,9 @@ An SSH key allows your computer to talk directly with your GitHub account. Only 
 
 Now you're all set! 
 
-### Step 2: Clone a version of the workshop repository to your computer
+### Step 2: Clone a version of the roll-call repository to your computer
 
-In this section, you will clone a version of the workshop repository to your 
+In this section, you will clone a version of the roll-call repository to your 
 computer and eventually modify the text file "roll_call" so that the instructors
 can verify that you have successfully prepared for the workshop activities. (These steps loosely follow http://r-bio.github.io/intro-git-rstudio/.)
 
@@ -115,8 +79,8 @@ can verify that you have successfully prepared for the workshop activities. (The
 
 
 
-1. Navigate to the workshop repository (https://github.com/aaarchmiller/reproducibility_workshop) on GitHub
-2. Click "Fork" in the upper right hand corner. This will create a cloned branch in your own GitHub account (Forked Branch in the image above). Copy the URL for *your* branch (something like: https://github.com/yourusername/reproducibility_workshop).
+1. Navigate to the workshop repository (https://github.com/aaarchmiller/roll_call) on GitHub
+2. Click "Fork" in the upper right hand corner. This will create a cloned branch in your own GitHub account (Forked Branch in the image above). Copy the URL for *your* branch (something like: https://github.com/yourusername/roll_call).
 ![](images/fork_repo.png)
 
 3. Open RStudio, go to File > New Project
