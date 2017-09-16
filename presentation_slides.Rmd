@@ -21,6 +21,7 @@ Althea A. ArchMiller &  John R. Fieberg
 - RStudio <www.rstudio.com/products/RStudio> (required)
 - Git <git-scm.com> (optional)
 - GitHub account <github.com> (optional)
+- Microsoft Word (preferable)
 
 
 
@@ -533,7 +534,8 @@ git remote add origin https://github.com/
     gitusername/TWS_reproducibility_workshop.git
 git config remote.origin.url 
     git@github.com:gitusername/TWS_reproducibility_workshop.git
-git push origin master
+git push -u origin master
+git pull -u origin master
 ```
 
 ## GitHub
