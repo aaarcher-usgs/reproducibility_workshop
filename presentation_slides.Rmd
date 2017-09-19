@@ -548,10 +548,6 @@ Additional GitHub Tips
 
 ## Thanks!
 
-We can use your feedback for the workshop at TWS. Please take a moment or two to fill out our survey.
-
-<https://docs.google.com/forms/d/e/1FAIpQLSdmvePcbb3wztx2JpJUhgTqpjvbR0z3etpnjGrRSRfTBnLpcQ/viewform?usp=sf_link>
-
 \centering
 \includegraphics[width=3.5in]{images/git_commit.png}
 \centering
@@ -570,3 +566,5 @@ We can use your feedback for the workshop at TWS. Please take a moment or two to
 
 - Online Reproducible Research Course
 <http://eriqande.github.io/rep-res-web/>
+
+- Excellent GitHub/RStudio tutorial <https://www.r-bloggers.com/rstudio-and-github/>
