@@ -13,8 +13,6 @@ knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
 options(width=300)
 ```
 
-## Overview and Introduction
-
 ### Requirements
 
 Program R <https://www.r-project.org/>
@@ -33,9 +31,15 @@ GitHub account <https://github.com/>
 
 ## Instructions for setting up Git using GitHub and RStudio
 
-At the end of this introduction, you will add your name to the workshop roll call, signalling to the instructors that you have successfully set up GitHub. If at any point you run across errors or concerns, please email Althea at althea.archmiller [at] gmail [dot] com. 
+At the end of this introduction, you will have made a new repository on the GitHub website; sync the repository with an RStudio project file on your local computer; and commit and push a modification back up to GitHub's website. If at any point you run across errors or concerns, please email Althea at althea.archmiller [at] gmail [dot] com. 
 
-### Step 1. Sync your GitHub Account and RStudio
+### Step 1. Create a GitHub account and complete Hello World tutorial
+
+The first step is to simply perform all the steps in the GitHub tutorial, "Hello World." The tutorial can be found at https://guides.github.com/activities/hello-world/.
+
+Your new repository on GitHub should be something like: **github.com/aaarchmiller/hello-world** (although "aaarchmiller" should be replaced with your GitHub account username).
+
+### Step 2. Sync your GitHub Account and RStudio
 
 #### Set up SSH key
 
@@ -67,82 +71,34 @@ An SSH key allows your computer to talk directly with your GitHub account. Only 
 14. Paste in the text, which should start with "ssh-rsa ..."
 15. Click green "Add SSH key" button.
 
-Now you're all set! 
+### Step 3: Create a new project in RStudio and sync with hello-world
 
-### Step 2: Clone a version of the roll-call repository to your computer
-
-In this section, you will clone a version of the roll-call repository to your 
-computer and eventually modify the text file "roll_call" so that the instructors
-can verify that you have successfully prepared for the workshop activities. (These steps loosely follow http://r-bio.github.io/intro-git-rstudio/.)
-
-![](images/github_overview_keynote/github_overview_keynote.001.png)
-
-
-
-1. Navigate to the workshop repository (https://github.com/aaarchmiller/roll_call) on GitHub
-2. Click "Fork" in the upper right hand corner. This will create a cloned branch in your own GitHub account (Forked Branch in the image above). Copy the URL for *your* branch (something like: https://github.com/yourusername/roll_call).
-![](images/fork_repo.png)
-
-3. Open RStudio, go to File > New Project
+1. Open RStudio, go to File > New Project
 ![](images/new_project1.png)
 
-4. Select "Version Control" and then "Git"
+2. Select "Version Control" and then "Git"
 
 ![](images/new_project2.png)
 ![](images/new_project3.png)
 
-5. Paste in the URL for *your* branch (something like: https://github.com/yourusername/reproducibility_workshop). Make sure you're happy with the location on the harddrive that it will be saved to and select "Create Project"
+3. Paste in the URL for *your* Hello World respository (something like: https://github.com/yourusername/hello-world). Make sure you're happy with the location on the harddrive that it will be saved to and select "Create Project"
 ![](images/new_project4.png)
 
-6. Now, in order to link this project with Althea's "upstream" version, we will use the shell and the **git** language directly. Open the shell by selecting Tools > Shell...
-![](images/shell1.png)
+### Step 4. Commit some changes in RStudio and push them to GitHub
 
-7. Type in (exactly; cannot copy/paste) and hit Enter:
+1. You should now see a "Git" tab in the upper right window of RStudio. Click on that tab and you should see "hello-world.Rproj" and ".gitignore" listed in that tab.
 
-```{r shell1, eval=F, echo=T}
-git remote add upstream https://github.com/aaarchmiller/reproducibility_workshop
-```
+*Note: you may also see a ".DS_store" file if you are using a Mac. This is just a hidden file that Mac uses to store your preferences for how each folder appears in Finder. You may disregard this for now, or check it along with "hello-world.Rproj" in the next step.*
 
-### Step 3: Add your name to roll_call.txt
+2. Click on the squares next to "hello-world.Rproj" and ".gitignore" which will stage them for your commit. 
+![](images/git_tab1copy.png)
 
-1. In the Files tab of RStudio (bottom right), you should see roll_call.txt. Open that file up, add your name, and save.
-2. In the Git tab of RStudio (top right), you should now see roll_call show up.
-3. Select roll_call by clicking in the box to the left of it (a check mark should appear).
-4. Click "Commit" button and a new window should appear:
-![](images/commit1.png)
+3. Click on "Commit" and you will see a new window pop-up. 
+4. Type "initialized Project in RStudio" in the commit message box and click on the "Commit" button.
+![](images/git_commit1.png)
 
-5. Type in an informative "commit message" like above
-6. Select the "Commit" button. You may get a message like this, which you can disregard.
-
-```{r shellx, eval=F, echo=T}
-[conduct-rollcall 942752f8] Added name to roll_call
- Committer: Firstname Lastname <email@place.edu>
-Your name and email address were configured automatically based 
-on your username and hostname. Please check ...
-```
-
-7. Now you will push the commit to your repository on GitHub. You can do this with the **green arrow** (push) in the Git tab of RStudio, or in shell. To do this in shell, simply  type in this (exactly; cannot copy/paste) and hit Enter:
-```{r shell3, eval=F, echo=T}
-git push origin master
-```
-
-Note: A prompt may appear asking for you to enter your username and password for GitHub. If it does, just enter the same username and password as you used to make your GitHub account. (This is platform-specific, don't worry if it doesn't appear). 
-
-Now, you have changed roll_call in your forked branch (i.e., your version of the repository). To verify, you should be able to see your name on roll_call.txt on the GitHub website (on your forked repository, it has not yet been merged with Althea's master branch).
-
-The next step is to send your modified roll_call.txt version to the instructors to merge with the original branch. 
-
-### Step 4: Add your roll_call modifications to Althea's repository
-
-1. Go to your forked repository on the GitHub website.
-2. Click on the grey "pull request" button.
-3. Now, click on the green "Pull request" link. 
-![](images/pullrequest1.png)
-4. Add "Yourname roll call" as title, with a short message:
-![](images/pullrequest2.png)
-5. Verify that base fork and head fork match above screen shot, except with yourusername instead of "vitensek". Now, create the pull request (green button).
-6. There should be no conflicts (as in image below), and this will send an email to Althea asking for her to view your changes and accept them into her main repository.
-![](images/pullrequest3.png)
-
+5. Send the newest commit to GitHub by pressing the Push button. 
+6. Open up your repository in GitHub to make sure that the newest commit was successfully pushed to GitHub from RStudio.
+![](images/synced_github.png)
 
 If you have completed all of these steps, you are now ready to participate in the workshop--and use GitHub for your own projects. Again, contact Althea (althea.archmiller [at] gmail [dot] com) if you have any problems!
